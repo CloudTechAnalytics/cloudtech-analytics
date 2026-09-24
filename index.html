@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudTech Analytics | Data, Software & AI Solutions</title>
+    <meta
+      name="description"
+      content="CloudTech Analytics builds business software, data solutions, AI applications and technology services designed around real operational workflows."
+    />
+    <meta name="theme-color" content="#F8F5EF" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      // Set the theme before first paint (matches src/lib/theme.ts).
+      try {
+        var t = localStorage.getItem("ct-theme");
+        var dark = t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (dark) {
+          document.documentElement.classList.add("dark");
+          document.querySelector('meta[name="theme-color"]').setAttribute("content", "#14161B");
+        }
+      } catch (e) {}
+    </script>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CloudTech Analytics" />
+    <meta property="og:title" content="CloudTech Analytics | Data, Software & AI Solutions" />
+    <meta
+      property="og:description"
+      content="CloudTech Analytics builds business software, data solutions, AI applications and technology services designed around real operational workflows."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CloudTech Analytics | Data, Software & AI Solutions" />
+    <meta
+      name="twitter:description"
+      content="CloudTech Analytics builds business software, data solutions, AI applications and technology services designed around real operational workflows."
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CloudTech Analytics",
+        "description": "Technology company, product studio and training provider building business software, data solutions, AI applications and technology services.",
+        "telephone": "+234 911 559 1877",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
+        "sameAs": ["https://www.linkedin.com/company/108231854/"],
+        "email": "cloudtechanalytics.consultant@gmail.com",
+        "logo": "/icon-512.png",
+        "brand": [
+          { "@type": "Brand", "name": "The Counsel" },
+          { "@type": "Brand", "name": "The Manifest" }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="font-family: Georgia, serif; padding: 2rem">
+        CloudTech Analytics builds business software, data solutions, AI applications and technology services.
+        Contact: cloudtechanalytics.consultant@gmail.com
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
