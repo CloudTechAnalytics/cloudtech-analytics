@@ -20,7 +20,7 @@ export default function Services() {
         intro="Alongside our own products, we work with organizations on their reporting, their internal software and the manual work that slows them down."
       />
 
-      <nav aria-label="Services on this page" className="sticky top-[68px] z-30 border-b border-line bg-ivory/95 backdrop-blur-md lg:top-[80px]">
+      <nav aria-label="Services on this page" className="sticky top-17 z-30 border-b border-line bg-ivory/95 backdrop-blur-md lg:top-20">
         <ul className="container-page flex gap-6 overflow-x-auto py-3.5 text-[0.875rem] scrollbar-none sm:gap-10">
           {SERVICES.map((s) => (
             <li key={s.id} className="shrink-0">

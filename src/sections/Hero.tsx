@@ -6,11 +6,11 @@ import { PRODUCTS } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="mt-[-68px] overflow-hidden pt-[68px] lg:mt-[-80px] lg:pt-[80px]">
+    <section aria-labelledby="hero-title" className="-mt-17 overflow-hidden pt-17 lg:-mt-20 lg:pt-20">
       <div className="container-page grid items-center gap-12 pb-16 pt-10 sm:pt-16 lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-20">
         <div className="lg:col-span-6">
           <Reveal>
-            {/* Same headline pattern as The Counsel and The Manifest: tracked kicker, bold serif, one brass phrase. */}
+            {/* Same headline pattern as The Counsel and The Manifest: tracked kicker, serif headline, one brass phrase. */}
             <p className="kicker flex items-center gap-2.5">
               <CloudTechMark tone="brass" className="h-4 w-4" />
               Data · Software · AI · Business solutions
@@ -57,7 +57,7 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-6">
-          <Reveal delay={200} className="mx-auto w-full max-w-[420px] sm:max-w-[500px]">
+          <Reveal delay={200} className="mx-auto w-full max-w-105 sm:max-w-125">
             <HeroVisual />
           </Reveal>
         </div>

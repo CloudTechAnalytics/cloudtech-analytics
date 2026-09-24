@@ -9,7 +9,7 @@ export function FounderSection() {
     <section id="founder" aria-labelledby="founder-title" className="border-t border-line py-20 sm:py-28">
       <div className="container-page grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
         <Reveal className="lg:col-span-5">
-          <figure className="relative mx-auto max-w-[400px] lg:mx-0">
+          <figure className="relative mx-auto max-w-100 lg:mx-0">
             {/* Offset brass frame behind the portrait */}
             <div aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl border border-brass/50" />
             <picture>

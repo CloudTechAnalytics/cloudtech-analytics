@@ -78,7 +78,7 @@ export function Navbar() {
         Skip to main content
       </a>
 
-      <div className="container-page flex h-[68px] items-center justify-between lg:h-[80px]">
+      <div className="container-page flex h-17 items-center justify-between lg:h-20">
         <Link to="/" aria-label="CloudTech Analytics home" className="-m-1 p-1">
           <span className="lg:hidden">
             <CloudTechLogo size="sm" />
@@ -146,7 +146,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className="fixed inset-x-0 bottom-0 top-[68px] overflow-y-auto border-t border-line bg-ivory lg:hidden"
+        className="fixed inset-x-0 bottom-0 top-17 overflow-y-auto border-t border-line bg-ivory lg:hidden"
       >
         <div className="container-page flex min-h-full flex-col pb-10 pt-6">
           <nav aria-label="Mobile">
