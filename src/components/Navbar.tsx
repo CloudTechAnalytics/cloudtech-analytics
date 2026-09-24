@@ -73,7 +73,7 @@ export function Navbar() {
     >
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] focus:bg-night focus:px-4 focus:py-2 focus:text-cream"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-60 focus:bg-night focus:px-4 focus:py-2 focus:text-cream"
       >
         Skip to main content
       </a>

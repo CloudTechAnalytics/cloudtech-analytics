@@ -94,7 +94,7 @@ export function TrainingSection() {
                   <span className="font-serif text-[1.4rem] leading-tight group-hover:text-brass-dark sm:text-[1.6rem]">
                     {c.title}
                   </span>
-                  <span className="text-right text-[0.875rem] text-muted sm:order-none">{c.duration}</span>
+                  <span className="text-right text-[0.875rem] text-muted sm:order-0">{c.duration}</span>
                   <span className="col-span-2 text-[0.9375rem] text-ink/80 [font-variant-numeric:lining-nums] sm:col-span-1 sm:text-right">
                     {c.price}
                   </span>

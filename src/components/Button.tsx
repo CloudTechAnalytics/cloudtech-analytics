@@ -12,7 +12,7 @@ const variants: Record<Variant, string> = {
   primary: "min-h-12 px-6 py-3 bg-brass-button text-on-brass shadow-[0_1px_2px_rgba(23,23,23,0.12)] hover:bg-brass-button-hover",
   secondary: "min-h-12 px-6 py-3 border border-line-strong bg-paper text-ink hover:border-ink/40",
   // For use on always-dark sections, so fixed colours in both themes.
-  light: "min-h-12 px-6 py-3 bg-cream text-night hover:bg-[#efe4cc]",
+  light: "min-h-12 px-6 py-3 bg-cream text-night hover:bg-cream-deep",
   ghost: "py-2 text-ink underline decoration-line-strong underline-offset-4 hover:text-brass-dark hover:decoration-brass",
 };
 

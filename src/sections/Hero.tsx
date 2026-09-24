@@ -6,7 +6,7 @@ import { PRODUCTS } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="-mt-[68px] overflow-hidden pt-[68px] lg:-mt-[80px] lg:pt-[80px]">
+    <section aria-labelledby="hero-title" className="mt-[-68px] overflow-hidden pt-[68px] lg:mt-[-80px] lg:pt-[80px]">
       <div className="container-page grid items-center gap-12 pb-16 pt-10 sm:pt-16 lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-20">
         <div className="lg:col-span-6">
           <Reveal>

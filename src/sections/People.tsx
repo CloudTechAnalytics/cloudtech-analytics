@@ -20,7 +20,7 @@ export function FounderSection() {
                 width={394}
                 height={608}
                 loading="lazy"
-                className="relative aspect-[394/608] w-full rounded-2xl object-cover shadow-[0_40px_70px_-40px_rgba(23,23,23,0.55)]"
+                className="relative aspect-394/608 w-full rounded-2xl object-cover shadow-[0_40px_70px_-40px_rgba(23,23,23,0.55)]"
               />
             </picture>
           </figure>
@@ -81,7 +81,7 @@ function initials(name: string) {
 function MemberCard({ person }: { person: Person }) {
   return (
     <article className="group">
-      <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-sand">
+      <div className="aspect-4/5 overflow-hidden rounded-2xl border border-line bg-sand">
         {person.photo ? (
           <img
             src={person.photo}
