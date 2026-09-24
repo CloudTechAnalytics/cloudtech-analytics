@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { useSeo } from "@/lib/seo";
+import { breadcrumbs, coursesListJsonLd } from "@/lib/schema";
 import { COURSES, TRAINING_STATS } from "@/lib/training";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -33,9 +34,10 @@ export function TrainingStats({ className = "" }: { className?: string }) {
 
 export default function Training() {
   useSeo({
-    title: "Training | Data Analytics, Data Science & AI Courses | CloudTech Analytics",
+    title: "Data Analytics, Data Science and AI Courses in Lagos | CloudTech Analytics",
     description:
-      "Courses in data analytics, data science, artificial intelligence and business analytics from CloudTech Analytics in Lagos. Live classes, projects, certification and job assistance.",
+      "Learn data analytics, data science, artificial intelligence or business analytics in Lagos. Live classes online or in person, projects, certification and job assistance. 250 professionals trained.",
+    jsonLd: [coursesListJsonLd(COURSES), breadcrumbs([["Home", "/"], ["Training", "/training"]])],
   });
 
   return (

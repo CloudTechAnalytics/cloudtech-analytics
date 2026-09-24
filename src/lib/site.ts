@@ -5,8 +5,14 @@ export const SITE = {
   /** WhatsApp number in international format, digits only. */
   whatsapp: "2349115591877",
   location: "Lagos, Nigeria",
-  /** Production domain, set via VITE_SITE_URL once a custom domain is connected. */
-  url: (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ?? "",
+  /**
+   * Public address used for canonical URLs, social previews and the sitemap.
+   * Set VITE_SITE_URL when a custom domain is connected.
+   */
+  url: ((import.meta.env.VITE_SITE_URL as string | undefined) || "https://cloudtech-analytics.vercel.app").replace(/\/$/, ""),
+  /** Google Search Console HTML-tag verification code (the content="..." value only). */
+  googleVerification: (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) ?? "",
+  founder: "John Adeleke",
   /** Social profiles carried over from the previous CloudTech site. */
   linkedin: "https://www.linkedin.com/company/108231854/",
   twitter: "https://twitter.com/cloudtechanalytics",

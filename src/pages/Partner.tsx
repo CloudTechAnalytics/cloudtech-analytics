@@ -1,4 +1,5 @@
 import { useSeo } from "@/lib/seo";
+import { breadcrumbs } from "@/lib/schema";
 import { mailto } from "@/lib/site";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -49,7 +50,8 @@ export default function Partner() {
   useSeo({
     title: "Partnerships | CloudTech Analytics",
     description:
-      "Partner with CloudTech Analytics on data, AI and analytics education: academic programmes, corporate training, and community outreach.",
+      "Partner with CloudTech Analytics on data, AI and analytics education in Nigeria: university programmes, corporate training and community outreach.",
+    jsonLd: breadcrumbs([["Home", "/"], ["Partnerships", "/partner"]]),
   });
 
   return (

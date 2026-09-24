@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router";
 import { ArrowLeft, ArrowRight, Check, Plus } from "lucide-react";
 import { useSeo } from "@/lib/seo";
+import { breadcrumbs, courseJsonLd } from "@/lib/schema";
 import { COURSES, findCourse, type Course as CourseType } from "@/lib/training";
 import { Reveal } from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
@@ -56,11 +57,16 @@ export default function Course() {
   const course = findCourse(slug);
 
   useSeo({
-    title: course ? `${course.title} Course | CloudTech Analytics Training` : "Course not found | CloudTech Analytics",
+    title: course
+      ? `${course.title} Course in Lagos (${course.duration}) | CloudTech Analytics`
+      : "Course not found | CloudTech Analytics",
     description: course
-      ? `${course.programme}: ${course.tagline} ${course.duration}, ${course.price}. Live classes, projects and certification.`
+      ? `${course.programme}: ${course.tagline} ${course.duration}, ${course.price}. Live classes online or in person in Lagos, with projects and certification.`
       : "This course doesn't exist.",
     noindex: !course,
+    jsonLd: course
+      ? [courseJsonLd(course), breadcrumbs([["Home", "/"], ["Training", "/training"], [course.title, `/training/${course.slug}`]])]
+      : undefined,
   });
 
   if (!course) return <NotFound />;

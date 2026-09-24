@@ -1,4 +1,5 @@
 import { useSeo } from "@/lib/seo";
+import { breadcrumbs } from "@/lib/schema";
 import { mailto } from "@/lib/site";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -16,6 +17,9 @@ export default function Insights() {
     title: "Insights | CloudTech Analytics",
     description:
       "Writing from CloudTech Analytics on data, legal and logistics software, and automation. Nothing is published yet.",
+    // Hidden from search until there are articles; an empty page adds nothing to results.
+    noindex: true,
+    jsonLd: breadcrumbs([["Home", "/"], ["Insights", "/insights"]]),
   });
 
   return (

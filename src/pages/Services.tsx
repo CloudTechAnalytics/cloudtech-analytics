@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useSeo } from "@/lib/seo";
+import { breadcrumbs } from "@/lib/schema";
 import { SERVICES } from "@/lib/content";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -8,9 +9,10 @@ import { IndustriesSection } from "@/sections/HomeSections";
 
 export default function Services() {
   useSeo({
-    title: "Services | Data, Software Engineering & AI | CloudTech Analytics",
+    title: "Data Analytics, Power BI, Software and AI Services in Lagos | CloudTech Analytics",
     description:
-      "Data & analytics, software engineering, and AI & automation services from CloudTech Analytics, built around the way your organization actually works.",
+      "Dashboards and Power BI reporting, custom business software and AI automation for organizations in Nigeria, from CloudTech Analytics in Lagos.",
+    jsonLd: breadcrumbs([["Home", "/"], ["Services", "/services"]]),
   });
 
   return (

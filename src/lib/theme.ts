@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 
 export type Theme = "light" | "dark";
 
@@ -23,41 +23,42 @@ function apply(theme: Theme) {
   document.querySelector('meta[name="theme-color"]')?.setAttribute("content", THEME_COLOR[theme]);
 }
 
+// The <html> class is the source of truth (set before first paint by index.html).
+function subscribe(onChange: () => void) {
+  const mo = new MutationObserver(onChange);
+  mo.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => mo.disconnect();
+}
+const getSnapshot = (): Theme => (document.documentElement.classList.contains("dark") ? "dark" : "light");
+// Prerendered HTML assumes light; the client corrects it right after hydration.
+const getServerSnapshot = (): Theme => "light";
+
 /**
  * Light/dark theme. Follows the device setting until the visitor picks one,
- * then remembers the choice. The initial class is set by an inline script in
- * index.html so the page never flashes the wrong theme.
+ * then remembers the choice.
  */
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(() =>
-    document.documentElement.classList.contains("dark") ? "dark" : "light",
-  );
-
-  useEffect(() => {
-    apply(theme);
-  }, [theme]);
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   // Keep following the device setting while the visitor hasn't chosen.
   useEffect(() => {
     const mq = window.matchMedia?.("(prefers-color-scheme: dark)");
     if (!mq) return;
     const onChange = () => {
-      if (!stored()) setTheme(system());
+      if (!stored()) apply(system());
     };
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
   const toggle = useCallback(() => {
-    setTheme((t) => {
-      const next: Theme = t === "dark" ? "light" : "dark";
-      try {
-        localStorage.setItem(KEY, next);
-      } catch {
-        /* storage unavailable: the choice lasts for this page view only */
-      }
-      return next;
-    });
+    const next: Theme = getSnapshot() === "dark" ? "light" : "dark";
+    try {
+      localStorage.setItem(KEY, next);
+    } catch {
+      /* storage unavailable: the choice lasts for this page view only */
+    }
+    apply(next);
   }, []);
 
   return { theme, toggle };

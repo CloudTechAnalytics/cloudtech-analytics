@@ -1,7 +1,8 @@
-import { useId, useState, type ReactNode } from "react";
+import { useEffect, useId, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router";
 import { ArrowRight, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useSeo } from "@/lib/seo";
+import { breadcrumbs } from "@/lib/schema";
 import { SITE, mailto, whatsapp } from "@/lib/site";
 import { PRODUCTS } from "@/lib/content";
 import { COURSES } from "@/lib/training";
@@ -69,9 +70,10 @@ function Field({
 
 export default function Contact() {
   useSeo({
-    title: "Contact | CloudTech Analytics",
+    title: "Contact CloudTech Analytics | Lagos, Nigeria",
     description:
-      "Talk to CloudTech Analytics about data, software and AI, our products, training courses or partnerships. Email or WhatsApp, Lagos, Nigeria.",
+      "Talk to CloudTech Analytics about data, software and AI, The Counsel or The Manifest, training courses or partnerships. Email or WhatsApp +234 911 559 1877.",
+    jsonLd: breadcrumbs([["Home", "/"], ["Contact", "/contact"]]),
   });
 
   const uid = useId();
@@ -82,10 +84,15 @@ export default function Contact() {
     company: "",
     email: "",
     phone: "",
-    topic: ALL_TOPICS.includes(requested) ? requested : "",
+    topic: "",
     message: "",
   });
   const [errors, setErrors] = useState<Errors>({});
+
+  // Pre-select a topic from ?topic= after hydration, so the prerendered HTML (no query) and the client agree.
+  useEffect(() => {
+    if (ALL_TOPICS.includes(requested)) setFields((f) => (f.topic ? f : { ...f, topic: requested }));
+  }, [requested]);
   const [sent, setSent] = useState<Channel | null>(null);
 
   const set = (k: keyof Fields) => (e: { target: { value: string } }) => {

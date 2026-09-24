@@ -13,9 +13,9 @@ import {
 
 export default function Home() {
   useSeo({
-    title: "CloudTech Analytics | Data, Software & AI Solutions",
+    title: "CloudTech Analytics | Data, Software, AI and Training in Lagos",
     description:
-      "CloudTech Analytics builds business software, data solutions, AI applications and technology services designed around real operational workflows.",
+      "CloudTech Analytics is a technology company in Lagos, Nigeria: makers of The Counsel legal practice software and The Manifest freight platform, with data, AI and analytics training.",
   });
 
   return (

@@ -1,5 +1,6 @@
 import { ArrowUpRight, Check } from "lucide-react";
 import { useSeo } from "@/lib/seo";
+import { breadcrumbs, productsJsonLd } from "@/lib/schema";
 import { PRODUCTS, type Product } from "@/lib/content";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -130,9 +131,10 @@ function ProductFeature({ product }: { product: Product }) {
 
 export default function Products() {
   useSeo({
-    title: "Products | CloudTech Analytics",
+    title: "The Counsel and The Manifest | Software by CloudTech Analytics",
     description:
-      "The Counsel for legal practice management and The Manifest for freight and logistics operations. Focused software built by CloudTech Analytics.",
+      "The Counsel is legal practice management software for law firms in Nigeria. The Manifest is operations software for freight forwarders. Both are built by CloudTech Analytics.",
+    jsonLd: [...productsJsonLd(), breadcrumbs([["Home", "/"], ["Products", "/products"]])],
   });
 
   return (

@@ -9,19 +9,29 @@ React 19 · TypeScript · Vite · Tailwind CSS v4 · React Router · Lucide icon
 ```bash
 npm install
 npm run dev            # local development
-npm run build          # typecheck + production build into dist/
+npm run build          # typecheck, production build, then prerender every page into dist/
 npm run preview        # serve the production build
 npm run brand:assets   # regenerate favicon PNGs, OG image and social profile image
 ```
 
-## Before connecting the custom domain
+## Search engines (SEO)
 
-1. Set `VITE_SITE_URL` (see `.env.example`) in your hosting provider, e.g. `https://www.your-domain.com`.
-   This drives canonical URLs, Open Graph URLs and `sitemap.xml`. Without it, canonicals fall back to the
-   current origin and no sitemap is generated.
-2. Contact details and social links live in `src/lib/site.ts` (email, phone/WhatsApp, location, LinkedIn,
-   X, Instagram).
-3. `vercel.json` already rewrites all routes to `index.html` for client-side routing.
+- `npm run build` prerenders every route to static HTML (`scripts/prerender.mjs`), so each page ships its own
+  title, description, canonical URL, Open Graph tags, schema.org structured data and full text. It also writes
+  `sitemap.xml`, `robots.txt` and `404.html`.
+- Page titles, descriptions and structured data are set per page with `useSeo()`; the schema.org data lives in
+  `src/lib/schema.ts`.
+- Vercel serves the prerendered files at clean URLs (`vercel.json`: `cleanUrls`, `trailingSlash: false`);
+  unknown addresses get `404.html` with a real 404 status.
+
+Environment variables (Vercel → Project → Settings → Environment Variables, then redeploy):
+
+| Variable | Purpose |
+| :-- | :-- |
+| `VITE_SITE_URL` | Public address used in canonical URLs, previews and the sitemap. Defaults to `https://cloudtech-analytics.vercel.app`; set it when a custom domain is connected. |
+| `VITE_GOOGLE_SITE_VERIFICATION` | The code from Google Search Console's "HTML tag" verification method (only the `content` value). |
+
+Contact details and social links live in `src/lib/site.ts`.
 
 ## Structure
 

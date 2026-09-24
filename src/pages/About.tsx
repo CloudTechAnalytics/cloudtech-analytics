@@ -1,4 +1,5 @@
 import { useSeo } from "@/lib/seo";
+import { breadcrumbs, founderJsonLd } from "@/lib/schema";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CTASection } from "@/components/CTASection";
@@ -26,9 +27,10 @@ const ROLES = [
 
 export default function About() {
   useSeo({
-    title: "About | CloudTech Analytics",
+    title: "About CloudTech Analytics | Founded by John Adeleke",
     description:
-      "CloudTech Analytics grew from a foundation in data and analytics into a technology company, product studio, training provider and consulting partner, based in Lagos, Nigeria.",
+      "CloudTech Analytics is a technology company, product studio and training provider in Lagos, Nigeria, founded by data analyst John Adeleke.",
+    jsonLd: [founderJsonLd(), breadcrumbs([["Home", "/"], ["About", "/about"]])],
   });
 
   return (
