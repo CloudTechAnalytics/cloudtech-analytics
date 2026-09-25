@@ -7,6 +7,8 @@ import { Reveal } from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CourseCard, PartnerLogos, WhatsAppButton } from "@/components/Training";
+import { ProductMark } from "@/components/CloudTechLogo";
+import { SITE } from "@/lib/site";
 
 const INCLUDED = [
   "Certification on completion",
@@ -80,6 +82,30 @@ export default function Training() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="academy-title" className="border-t border-line py-20 sm:py-24">
+        <div className="container-page">
+          <Reveal className="grid gap-8 rounded-2xl border border-line bg-paper p-8 sm:p-10 lg:grid-cols-12 lg:items-center">
+            <div className="flex items-start gap-5 lg:col-span-8">
+              <ProductMark product="academy" className="h-12 w-12 shrink-0" />
+              <div>
+                <h2 id="academy-title" className="font-serif text-[1.9rem] leading-[1.15] sm:text-[2.2rem]">
+                  Learn at your own pace on CloudTech Academy
+                </h2>
+                <p className="mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-muted">
+                  Free, self-paced courses in Data Analytics Foundations, Excel, SQL, Data Modelling and Power BI. Practise on
+                  real datasets, take an assessment at the end of each course, and earn a certificate you can share.
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-4 lg:flex lg:justify-end">
+              <ButtonLink to={SITE.academyUrl} external className="w-full sm:w-auto">
+                Start learning free
+              </ButtonLink>
+            </div>
+          </Reveal>
         </div>
       </section>
 

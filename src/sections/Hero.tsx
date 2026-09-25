@@ -3,6 +3,7 @@ import { HeroVisual } from "@/components/HeroVisual";
 import { Reveal } from "@/components/Reveal";
 import { CloudTechMark } from "@/components/CloudTechLogo";
 import { PRODUCTS } from "@/lib/content";
+import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -51,6 +52,16 @@ export function Hero() {
                   </a>
                 </span>
               ))}
+              , and home of{" "}
+              <a
+                href={SITE.academyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-brass-dark underline decoration-brass/40 underline-offset-2 hover:decoration-brass"
+              >
+                CloudTech Academy
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
               .
             </p>
           </Reveal>

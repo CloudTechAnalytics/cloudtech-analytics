@@ -77,11 +77,18 @@ export function CloudTechLogo({
 }
 
 /** App-icon tiles for the products, echoing their own logos. */
-export function ProductMark({ product, className = "h-10 w-10" }: { product: "counsel" | "manifest"; className?: string }) {
+export function ProductMark({ product, className = "h-10 w-10" }: { product: "counsel" | "manifest" | "academy"; className?: string }) {
   return (
     <svg viewBox="0 0 48 48" className={className} aria-hidden>
       <rect width="48" height="48" rx="11" fill="#B38A3E" />
-      {product === "counsel" ? (
+      {product === "academy" ? (
+        // A mortarboard, for CloudTech Academy.
+        <g fill="none" stroke="#FFFFFF" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M24 13 L38 20 L24 27 L10 20 Z" fill="#FFFFFF" />
+          <path d="M16 23.5 V30 c0 3 16 3 16 0 V23.5" />
+          <path d="M38 20 V28" />
+        </g>
+      ) : product === "counsel" ? (
         // A heavy open "C", as in The Counsel's logo.
         <path d="M32.5 16.2 A11.5 11.5 0 1 0 32.5 31.8" fill="none" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
       ) : (

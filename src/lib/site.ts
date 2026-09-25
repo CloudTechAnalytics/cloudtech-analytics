@@ -18,6 +18,8 @@ export const SITE = {
   twitter: "https://twitter.com/cloudtechanalytics",
   instagram: "https://instagram.com/cloudtechanalytics",
   tagline: "Technology, data and software built for the way businesses actually work.",
+  /** CloudTech Academy: free, self-paced courses (a separate site). */
+  academyUrl: ((import.meta.env.VITE_ACADEMY_URL as string | undefined) || "https://cloudtech-academy.vercel.app").replace(/\/$/, ""),
 } as const;
 
 export const mailto = (subject?: string, body?: string) => {

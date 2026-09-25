@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { BrainCircuit, BriefcaseBusiness, CodeXml, Database, type LucideIcon } from "lucide-react";
+import { BrainCircuit, CodeXml, Database, type LucideIcon } from "lucide-react";
 import { CloudTechMark, ProductMark } from "./CloudTechLogo";
 
 /**
  * Hero illustration in the same orbit language as The Counsel's hero:
- * CloudTech at the centre, with what it connects (data, software, AI, business)
- * and the products it has built (The Counsel, The Manifest) on the ring.
+ * CloudTech at the centre, with what it works in (data, software, AI) and what it has
+ * built (The Counsel, The Manifest, CloudTech Academy) on the ring.
  * Drawn on a fixed stage and scaled to fit; narrow containers get a tighter stage.
  */
 export function HeroVisual({ className = "" }: { className?: string }) {
@@ -42,7 +42,7 @@ export function HeroVisual({ className = "" }: { className?: string }) {
 
 type Node =
   | { kind: "capability"; label: string; icon: LucideIcon; angle: number }
-  | { kind: "product"; label: string; product: "counsel" | "manifest"; angle: number };
+  | { kind: "product"; label: string; product: "counsel" | "manifest" | "academy"; angle: number };
 
 const NODES: Node[] = [
   { kind: "capability", label: "Data", icon: Database, angle: -90 },
@@ -50,7 +50,7 @@ const NODES: Node[] = [
   { kind: "capability", label: "Software", icon: CodeXml, angle: 30 },
   { kind: "capability", label: "AI", icon: BrainCircuit, angle: 90 },
   { kind: "product", label: "The Manifest", product: "manifest", angle: 150 },
-  { kind: "capability", label: "Business", icon: BriefcaseBusiness, angle: 210 },
+  { kind: "product", label: "Academy", product: "academy", angle: 210 },
 ];
 
 function Orbit({

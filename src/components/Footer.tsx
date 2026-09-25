@@ -90,6 +90,9 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <External href={SITE.academyUrl}>CloudTech Academy (free)</External>
+                </li>
               </ul>
             </nav>
 
