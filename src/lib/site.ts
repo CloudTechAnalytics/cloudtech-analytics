@@ -14,12 +14,12 @@ export const SITE = {
   googleVerification: (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) ?? "",
   founder: "John Adeleke",
   /** Social profiles carried over from the previous CloudTech site. */
-  linkedin: "https://www.linkedin.com/company/108231854/",
+  linkedin: "https://www.linkedin.com/company/cloudtech-analytics/",
   twitter: "https://twitter.com/cloudtechanalytics",
-  instagram: "https://instagram.com/cloudtechanalytics",
+  instagram: "https://instagram.com/jd_cta",
   tagline: "Technology, data and software built for the way businesses actually work.",
   /** CloudTech Academy: free, self-paced courses (a separate site). */
-  academyUrl: ((import.meta.env.VITE_ACADEMY_URL as string | undefined) || "https://cloudtech-academy.vercel.app").replace(/\/$/, ""),
+  academyUrl: ((import.meta.env.VITE_ACADEMY_URL as string | undefined) || "https://cloudtech-academy-one.vercel.app").replace(/\/$/, ""),
 } as const;
 
 export const mailto = (subject?: string, body?: string) => {
