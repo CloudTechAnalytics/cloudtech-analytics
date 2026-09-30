@@ -1,5 +1,4 @@
 import { ButtonLink } from "@/components/Button";
-import { HeroVisual } from "@/components/HeroVisual";
 import { Reveal } from "@/components/Reveal";
 import { CloudTechMark } from "@/components/CloudTechLogo";
 import { PRODUCTS } from "@/lib/content";
@@ -7,12 +6,26 @@ import { SITE } from "@/lib/site";
 
 export function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="-mt-17 overflow-hidden pt-17 lg:-mt-20 lg:pt-20">
-      <div className="container-page grid items-center gap-12 pb-16 pt-10 sm:pt-16 lg:grid-cols-12 lg:gap-8 lg:pb-24 lg:pt-20">
-        <div className="lg:col-span-6">
+    <section aria-labelledby="hero-title" className="relative isolate -mt-17 overflow-hidden pt-17 lg:-mt-20 lg:pt-20">
+      {/* A team at work, faded well back so the headline stays the focus (Unsplash licence). */}
+      <img
+        src="/images/hero-team.webp"
+        srcSet="/images/hero-team-1000.webp 1000w, /images/hero-team.webp 2000w"
+        sizes="100vw"
+        alt=""
+        width={2000}
+        height={1333}
+        fetchPriority="high"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[center_35%] opacity-[0.16] grayscale-[35%] dark:opacity-[0.12]"
+      />
+      <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--color-ivory)_85%)]" />
+      <div aria-hidden className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-b from-transparent to-ivory" />
+
+      <div className="container-page flex flex-col items-center pb-20 pt-14 text-center sm:pb-28 sm:pt-20 lg:pb-32 lg:pt-28">
+        <div className="mx-auto max-w-4xl">
           <Reveal>
             {/* Same headline pattern as The Counsel and The Manifest: tracked kicker, serif headline, one brass phrase. */}
-            <p className="kicker flex items-center gap-2.5">
+            <p className="kicker flex items-center justify-center gap-2.5">
               <CloudTechMark tone="brass" className="h-4 w-4" />
               Data · Software · AI · Business solutions
             </p>
@@ -24,13 +37,13 @@ export function Hero() {
             </h1>
           </Reveal>
           <Reveal delay={120}>
-            <p className="mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-muted sm:text-[1.1875rem]">
+            <p className="mx-auto mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-muted sm:text-[1.1875rem]">
               CloudTech Analytics combines data, software and AI to help organizations understand their operations,
               automate work and make better decisions.
             </p>
           </Reveal>
           <Reveal delay={220}>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <ButtonLink to="/products">Explore our products</ButtonLink>
               <ButtonLink to="/contact" variant="secondary" arrow={false}>
                 Work with CloudTech
@@ -64,12 +77,6 @@ export function Hero() {
               </a>
               .
             </p>
-          </Reveal>
-        </div>
-
-        <div className="lg:col-span-6">
-          <Reveal delay={200} className="mx-auto w-full max-w-120 sm:max-w-140">
-            <HeroVisual />
           </Reveal>
         </div>
       </div>
