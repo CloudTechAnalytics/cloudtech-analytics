@@ -50,7 +50,7 @@ export function ManifestPreview({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden
-      className={`rounded-xl bg-paper p-5 text-ink shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)] ${className}`}
+      className={`rounded-xl border border-line bg-paper p-5 text-ink shadow-[0_24px_48px_-32px_rgba(23,23,23,0.3)] ${className}`}
     >
       <div className="flex items-center justify-between text-[0.6875rem]">
         <p className="font-semibold uppercase tracking-[0.16em] text-brass-dark">Ref-2049 · Live</p>
