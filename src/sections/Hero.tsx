@@ -68,7 +68,7 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-6">
-          <Reveal delay={200} className="mx-auto w-full max-w-105 sm:max-w-125">
+          <Reveal delay={200} className="mx-auto w-full max-w-120 sm:max-w-140">
             <HeroVisual />
           </Reveal>
         </div>
