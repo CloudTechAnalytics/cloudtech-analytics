@@ -28,7 +28,7 @@ Environment variables (Vercel → Project → Settings → Environment Variables
 
 | Variable | Purpose |
 | :-- | :-- |
-| `VITE_SITE_URL` | Public address used in canonical URLs, previews and the sitemap. Defaults to `https://cloudtech-analytics.vercel.app`; set it when a custom domain is connected. |
+| `VITE_SITE_URL` | Public address used in canonical URLs, previews and the sitemap. Defaults to `https://cloudtechanalytics.com`; set it when a custom domain is connected. |
 | `VITE_GOOGLE_SITE_VERIFICATION` | The code from Google Search Console's "HTML tag" verification method (only the `content` value). |
 
 Contact details and social links live in `src/lib/site.ts`.

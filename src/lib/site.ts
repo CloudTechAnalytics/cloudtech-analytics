@@ -9,7 +9,7 @@ export const SITE = {
    * Public address used for canonical URLs, social previews and the sitemap.
    * Set VITE_SITE_URL when a custom domain is connected.
    */
-  url: ((import.meta.env.VITE_SITE_URL as string | undefined) || "https://cloudtech-analytics.vercel.app").replace(/\/$/, ""),
+  url: ((import.meta.env.VITE_SITE_URL as string | undefined) || "https://cloudtechanalytics.com").replace(/\/$/, ""),
   /** Google Search Console HTML-tag verification code (the content="..." value only). */
   googleVerification: (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) ?? "",
   founder: "John Adeleke",
@@ -19,7 +19,7 @@ export const SITE = {
   instagram: "https://instagram.com/jd_cta",
   tagline: "Technology, data and software built for the way businesses actually work.",
   /** CloudTech Academy: free, self-paced courses (a separate site). */
-  academyUrl: ((import.meta.env.VITE_ACADEMY_URL as string | undefined) || "https://cloudtech-academy-one.vercel.app").replace(/\/$/, ""),
+  academyUrl: ((import.meta.env.VITE_ACADEMY_URL as string | undefined) || "https://academy.cloudtechanalytics.com").replace(/\/$/, ""),
 } as const;
 
 export const mailto = (subject?: string, body?: string) => {
