@@ -9,7 +9,7 @@ export const SITE = {
    * Public address used for canonical URLs, social previews and the sitemap.
    * Set VITE_SITE_URL when a custom domain is connected.
    */
-  url: ((import.meta.env.VITE_SITE_URL as string | undefined) || "https://cloudtechanalytics.com").replace(/\/$/, ""),
+  url: ((import.meta.env.VITE_SITE_URL as string | undefined) || "https://www.cloudtechanalytics.com").replace(/\/$/, ""),
   /** Google Search Console HTML-tag verification code (the content="..." value only). */
   googleVerification: (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) ?? "",
   founder: "John Adeleke",
