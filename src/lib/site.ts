@@ -20,6 +20,8 @@ export const SITE = {
   tagline: "Technology, data and software built for the way businesses actually work.",
   /** CloudTech Academy: free, self-paced courses (a separate site). */
   academyUrl: ((import.meta.env.VITE_ACADEMY_URL as string | undefined) || "https://academy.cloudtechanalytics.com").replace(/\/$/, ""),
+  /** CloudTech Collection: official branded merchandise (a separate site). */
+  collectionUrl: ((import.meta.env.VITE_COLLECTION_URL as string | undefined) || "https://collection.cloudtechanalytics.com").replace(/\/$/, ""),
 } as const;
 
 export const mailto = (subject?: string, body?: string) => {

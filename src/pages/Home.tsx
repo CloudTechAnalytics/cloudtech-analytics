@@ -3,6 +3,7 @@ import { CTASection } from "@/components/CTASection";
 import { FactsStrip, Hero } from "@/sections/Hero";
 import {
   AboutSection,
+  CollectionSection,
   IndustriesSection,
   PrinciplesSection,
   ProductsSection,
@@ -29,6 +30,7 @@ export default function Home() {
       <IndustriesSection />
       <AboutSection />
       <ValuesSection className="border-t border-line" />
+      <CollectionSection />
       <CTASection />
     </>
   );

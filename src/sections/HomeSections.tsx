@@ -8,6 +8,8 @@ import { INDUSTRIES, PRINCIPLES, PRODUCTS, SERVICES, VALUES } from "@/lib/conten
 import { COURSES } from "@/lib/training";
 import { PartnerLogos } from "@/components/Training";
 import { FOUNDER } from "@/lib/team";
+import { SITE } from "@/lib/site";
+import { ButtonLink } from "@/components/Button";
 
 function TextLink({ to, children }: { to: string; children: string }) {
   return (
@@ -178,6 +180,34 @@ export function IndustriesSection({ className = "" }: { className?: string }) {
             </Reveal>
           ))}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+/** A quiet pointer to the CloudTech Collection: the brand's merchandise, not a product line. */
+export function CollectionSection() {
+  return (
+    <section aria-labelledby="collection-title" className="border-t border-line py-20 sm:py-24">
+      <div className="container-page">
+        <Reveal className="grid gap-8 rounded-2xl border border-line bg-paper p-8 sm:p-10 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-8">
+            <p className="text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-brass-dark">The CloudTech Collection</p>
+            <h2 id="collection-title" className="mt-3 font-serif text-[1.9rem] leading-[1.15] sm:text-[2.2rem]">
+              Wear the brand. Carry the idea.
+            </h2>
+            <p className="mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-muted">
+              Official CloudTech merchandise for our team, clients, partners and learners: the Signature Polo, journals,
+              pens and the boxed Corporate Kit, made to be worn into meetings, pitches and conferences. Corporate and event
+              orders welcome.
+            </p>
+          </div>
+          <div className="lg:col-span-4 lg:flex lg:justify-end">
+            <ButtonLink to={SITE.collectionUrl} external className="w-full sm:w-auto">
+              Explore the Collection
+            </ButtonLink>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

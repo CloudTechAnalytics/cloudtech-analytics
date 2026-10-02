@@ -106,6 +106,9 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <External href={SITE.collectionUrl}>CloudTech Collection</External>
+                </li>
               </ul>
             </nav>
 
